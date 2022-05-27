@@ -27,7 +27,11 @@ function App() {
       {/* Props*/}
       <ShowUserName name={userName}/>
       {/* Destruturação*/}
-      <DogDetails name="Nina" breed="Golden" color="Amarelo" kg={50}/>
+      <DogDetails name="Nina" breed="Golden" color="Amarelo" kg={40} newDog={true}/>
+      {/* Reaproveitamento de componentes */}
+      <DogDetails name="Beto" breed="Shitzu" color="Branco" kg={15} newDog={false}/>
+      <DogDetails name="Paçoca" breed="Pinscher" color="Preto" kg={12} newDog={false}/>
+      <DogDetails name="Laka" breed="Husky" color="Amarelo" kg={35} newDog={true}/>
     </div>
   );
 }

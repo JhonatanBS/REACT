@@ -1,4 +1,4 @@
-const DogDetails = ({name,breed,color,kg})=>{
+const DogDetails = ({name,breed,color,kg, newDog})=>{
 
     return(
         <div>
@@ -9,6 +9,7 @@ const DogDetails = ({name,breed,color,kg})=>{
                 <li>cor: {color}</li>
                 <li>kg: {kg}</li>
             </ul>
+            {newDog && <p>O cachorro é filhote</p>}
         </div>
     )
 }
