@@ -10,6 +10,12 @@ import DogDetails from './components/DogDetails';
 function App() {
   const [userName] = useState("Pedro");
 
+  const dogs = [
+    {name: "Batata", breed: "Shitzu", color: "Branco", kg: 15, newDog: true},
+    {name: "Linda", breed: "Pitbull", color: "Cinza", kg: 25, newDog: false},
+    {name: "Pandora", breed: "Vira-lata", color: "Marrom", kg: 18, newDog: false},
+  ];
+
   return (
     <div className="App">
       <h1>Avançando em REACT</h1>
@@ -32,6 +38,10 @@ function App() {
       <DogDetails name="Beto" breed="Shitzu" color="Branco" kg={15} newDog={false}/>
       <DogDetails name="Paçoca" breed="Pinscher" color="Preto" kg={12} newDog={false}/>
       <DogDetails name="Laka" breed="Husky" color="Amarelo" kg={35} newDog={true}/>
+      {/* Renderização de listas */}
+      {dogs.map((dog)=> (
+        <DogDetails name={dog.name} breed={dog.breed} color={dog.color} kg={dog.kg} newDog={dog.newDog}/>
+      ))}
     </div>
   );
 }
