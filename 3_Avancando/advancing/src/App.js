@@ -6,6 +6,7 @@ import ConditionalRender from './components/ConditionalRender';
 import ShowUserName from './components/ShowUserName';
 import { useState } from 'react';
 import DogDetails from './components/DogDetails';
+import Container from './components/Container';
 
 function App() {
   const [userName] = useState("Pedro");
@@ -42,6 +43,10 @@ function App() {
       {dogs.map((dog)=> (
         <DogDetails name={dog.name} breed={dog.breed} color={dog.color} kg={dog.kg} newDog={dog.newDog}/>
       ))}
+      {/* Props Children*/}
+      <Container myValue= "testando">
+        <p>Estou dentro do container</p>
+      </Container>
     </div>
   );
 }
