@@ -8,6 +8,8 @@ import { useState } from 'react';
 import DogDetails from './components/DogDetails';
 import Container from './components/Container';
 import ExecuteFunction from './components/ExecuteFunction';
+import Message from './components/Message';
+import MessageAlter from './components/MessageAlter';
 
 function App() {
   const [userName] = useState("Pedro");
@@ -19,6 +21,12 @@ function App() {
   ];
 
   const showMessage = ()=> console.log("Funções em Props");
+
+  const [message, setMessage] = useState("");
+
+  function messageStatus(msg){
+    setMessage(msg);
+  }
 
   return (
     <div className="App">
@@ -53,6 +61,10 @@ function App() {
 
       {/* Funções em Props */}
       <ExecuteFunction myFunction={showMessage}/>
+
+      {/* State lift */}
+      <Message msg={message}/>
+      <MessageAlter msgFunction={messageStatus}/>
     </div>
   );
 }
