@@ -7,15 +7,18 @@ import ShowUserName from './components/ShowUserName';
 import { useState } from 'react';
 import DogDetails from './components/DogDetails';
 import Container from './components/Container';
+import ExecuteFunction from './components/ExecuteFunction';
 
 function App() {
   const [userName] = useState("Pedro");
 
   const dogs = [
-    {name: "Batata", breed: "Shitzu", color: "Branco", kg: 15, newDog: true},
-    {name: "Linda", breed: "Pitbull", color: "Cinza", kg: 25, newDog: false},
-    {name: "Pandora", breed: "Vira-lata", color: "Marrom", kg: 18, newDog: false},
+    {id: 1, name: "Batata", breed: "Shitzu", color: "Branco", kg: 15, newDog: true},
+    {id: 2, name: "Linda", breed: "Pitbull", color: "Cinza", kg: 25, newDog: false},
+    {id: 3, name: "Pandora", breed: "Vira-lata", color: "Marrom", kg: 18, newDog: false},
   ];
+
+  const showMessage = ()=> console.log("Funções em Props");
 
   return (
     <div className="App">
@@ -41,12 +44,15 @@ function App() {
       <DogDetails name="Laka" breed="Husky" color="Amarelo" kg={35} newDog={true}/>
       {/* Renderização de listas */}
       {dogs.map((dog)=> (
-        <DogDetails name={dog.name} breed={dog.breed} color={dog.color} kg={dog.kg} newDog={dog.newDog}/>
+        <DogDetails key={dog.id} name={dog.name} breed={dog.breed} color={dog.color} kg={dog.kg} newDog={dog.newDog}/>
       ))}
       {/* Props Children*/}
       <Container myValue= "testando">
         <p>Estou dentro do container</p>
       </Container>
+
+      {/* Funções em Props */}
+      <ExecuteFunction myFunction={showMessage}/>
     </div>
   );
 }
