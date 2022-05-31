@@ -10,6 +10,7 @@ import Container from './components/Container';
 import ExecuteFunction from './components/ExecuteFunction';
 import Message from './components/Message';
 import MessageAlter from './components/MessageAlter';
+import UserDetails from './components/UserDetails';
 
 function App() {
   const [userName] = useState("Pedro");
@@ -65,6 +66,9 @@ function App() {
       {/* State lift */}
       <Message msg={message}/>
       <MessageAlter msgFunction={messageStatus}/>
+
+      {/* Tarefa 04 */}
+      <UserDetails/>
     </div>
   );
 }
