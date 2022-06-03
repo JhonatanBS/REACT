@@ -1,0 +1,10 @@
+body{
+  margin: 0;
+  padding: 0 0 1000px 0;
+  font-family: Helvetica;
+}
+
+h1{
+  color: red;
+  text-transform: uppercase;
+}
