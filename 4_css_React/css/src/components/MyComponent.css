@@ -1,0 +1,14 @@
+.warning{
+    color: #FFFFFF;
+    background-color: red;
+    width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    font-size: 2rem;
+    border-radius: 15px;
+}
+
+p{
+    color: red;
+    background-color: gold;
+}
