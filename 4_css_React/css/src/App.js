@@ -1,8 +1,11 @@
 import './App.css';
 import MyComponent from './components/MyComponent';
+import {useState} from "react";
 
 function App() {
   const valor = 15;
+  const [title] = useState(false);
+
   return (
     <div className="App">
       {/* CSS Global */}
@@ -17,6 +20,10 @@ function App() {
       {/* CSS inline dinâmico */}
       <p style={valor <= 15 ? {color:"blue",backgroundColor:"#2424"} : {color:"red"}}>
         Este é um estilo inline Dinâmico
+      </p>
+      {/* Classe Dinâmica */}
+      <p className={title ? "title-red" : "title-blue"}>
+        Isso é uma classe dinâmica
       </p>
     </div>
   );

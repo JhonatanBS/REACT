@@ -8,3 +8,17 @@ h1{
   color: red;
   text-transform: uppercase;
 }
+
+.title-red{
+  background-color: red;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.title-blue{
+  background-color: blue;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+}
