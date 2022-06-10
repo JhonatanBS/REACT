@@ -1,0 +1,17 @@
+form{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label{
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: left;
+}
+
+.form-control input{
+    width: 400px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
