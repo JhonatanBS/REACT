@@ -9,13 +9,13 @@ export function Comment() {
           <div className={styles.commentBox}>
             <div className={styles.commentContent}>
               <header>
-                <div className={styles.authorAndtime}>
+                <div className={styles.authorAndTime}>
                   <strong>Jhonatan Bezerra</strong>
                   <time title="07 de Julho ás 17:00" dateTime="2022-07-01 19:00:30">Cerca de 1h atrás</time>
                 </div>
 
                 <button title="Deletar comentário">
-                   <Trash size={20} /> 
+                   <Trash size={24} /> 
                 </button>
               </header>
 
