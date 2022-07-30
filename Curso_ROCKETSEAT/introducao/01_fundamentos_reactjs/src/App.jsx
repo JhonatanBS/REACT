@@ -10,7 +10,7 @@ const posts = [
   {
     id: 1,
     author: {
-      avatarUrl: "https://github.com/diego3g",
+      avatarUrl: "https://github.com/diego3g.png",
       name: "Diego Fernandes",
       role: "CTO @Rocketseat"
     },
@@ -24,9 +24,9 @@ const posts = [
   {
     id: 2,
     author: {
-      avatarUrl: "https://github.com/JhonatanBS",
+      avatarUrl: "https://github.com/JhonatanBS.png",
       name: "Jhonatan Bezerra",
-      role: "Desenvolvedor Full-Stack"
+      role: "Web Developer"
     },
     content: [
       {type: "paragraph", content: "Fala galeraa 👋"},
