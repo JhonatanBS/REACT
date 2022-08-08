@@ -24,9 +24,9 @@ const posts = [
   {
     id: 2,
     author: {
-      avatarUrl: "https://github.com/JhonatanBS.png",
-      name: "Jhonatan Bezerra",
-      role: "Web Developer"
+      avatarUrl: "https://github.com/maykbrito.png",
+      name: "Maik Brito",
+      role: "Educator @Rocketseat"
     },
     content: [
       {type: "paragraph", content: "Fala galeraa 👋"},
