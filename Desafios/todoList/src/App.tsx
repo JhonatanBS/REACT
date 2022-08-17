@@ -17,6 +17,19 @@ export function App() {
             <PlusCircle size={20}/>
           </button>
         </form>
+
+        <div className={styles.todoList}>
+          <div className={styles.setupCount}>
+            <div>
+              <p>Tarefas criadas <span>{0}</span></p>
+            </div>
+
+            <div>
+              <p>Concluídas <span>{0}</span></p>
+            </div>
+          </div>
+
+        </div>
       </main>
     </>
   )

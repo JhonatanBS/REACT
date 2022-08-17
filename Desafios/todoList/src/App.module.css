@@ -28,7 +28,7 @@
   border: 0;
   color: var(--gray-100);
   cursor: pointer;
-  transition: background .4s;
+  transition: background-color .4s;
   font-weight: 700;
   font-size: 0.875rem;
   margin-top: -1.8rem;
@@ -40,4 +40,34 @@
 
 .main button:hover {
   background-color: var(--blue);
+}
+
+.todoList {
+  margin-top: 64px;
+}
+
+.setupCount {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.setupCount div:nth-child(1) p{
+  color: var(--blue);
+  display: block;
+}
+
+.setupCount div:nth-child(2) p{
+  color: var(--purple);
+}
+
+.setupCount span {
+  display: inline-block;
+  width: 25px;
+  height: 19px;
+  border-radius: 999px;
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+  text-align: center;
 }
