@@ -1,10 +1,14 @@
-export function Todo() {
+import { Trash } from "phosphor-react";
+import styles from "./Todo.module.css";
+
+export function Todo({propsTodo, check}) {
   return(
-    <div>
-        <div>
-          <input type="checket" id="todo"/>
-          <label htmlFor="todo"></label>  
+        <div className={styles.container}>
+          <input type="checkbox" id="todo" />
+          <label htmlFor="todo">{propsTodo}</label>  
+          <div>
+           <Trash size={20} />
+          </div>
         </div>
-    </div>
   )
 }

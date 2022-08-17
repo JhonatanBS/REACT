@@ -4,18 +4,36 @@ import styles from "./App.module.css";
 import clipboard from "./assets/img/Clipboard.svg";
 
 import {PlusCircle, ClipboardText} from "phosphor-react";
-import { useState } from "react";
+import { FormEvent, ChangeEvent, useState } from "react";
 import { Todo } from "./components/Todo";
 
 export function App() {
-  const [todo, setTodo] = useState([]);
-  console.log(todo, setTodo)
+  const [todos, setTodos] = useState(["Fazer café"]);
+  const [newTodo, setNewTodo] = useState("");
+
+  function handleTodoSubmit(event: FormEvent) {
+    event.preventDefault();
+
+    setTodos([...todos, newTodo]);
+    
+  }
+
+  function handleNewTodoChange(event: ChangeEvent<HTMLTextAreaElement>):void {
+    event.target.setCustomValidity("");
+    setNewTodo(event.target.value)
+  }
+
   return (
     <>
       <Header/>
       <main className={styles.main}>
-        <form>
-          <input type="text" placeholder="Adicione uma nova tarefa"/>
+        <form onSubmit={handleTodoSubmit}>
+          <input 
+            onChange={handleNewTodoChange}
+            type="text" 
+            placeholder="Adicione uma nova tarefa" 
+            className={styles.input}
+            />
           <button type="submit">
             Criar
             <PlusCircle size={20}/>
@@ -36,7 +54,7 @@ export function App() {
           </div>
           
           <div className={styles.center}>
-            {todo.length === 0 ? (
+            {todos.length === 0 ? (
               <>
                 <div>
                   <img src={clipboard} alt="" />
@@ -49,7 +67,11 @@ export function App() {
 
               </>
             ) : (
-              <Todo />
+              <div>
+                {todos.map( todo => {
+                  return <Todo propsTodo={todo} check={false}/>
+                })}
+              </div>
             )}
           </div>
         </div>
