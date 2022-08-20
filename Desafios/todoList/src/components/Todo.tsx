@@ -1,8 +1,15 @@
 import { Trash } from "phosphor-react";
+import { Itodo } from "../App";
 import styles from "./Todo.module.css";
 
-export function Todo({propsTodo, deleteTodo ,alterDone}) {
+interface IPropsTodo {
+  propsTodo: Itodo;
+  deleteTodo(todoDelete: Itodo): void;
+  alterDone(alter: Itodo): void;
+}
 
+export function Todo({propsTodo, deleteTodo ,alterDone}: IPropsTodo) {
+ 
   function deleteTodoOnClick(): void {
     deleteTodo(propsTodo);
   }

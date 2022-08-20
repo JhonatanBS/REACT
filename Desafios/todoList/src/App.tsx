@@ -9,14 +9,14 @@ import { Todo } from "./components/Todo";
 
 import { v4 as uuidV4 } from "uuid";
 
-interface Itodo {
+export interface Itodo {
   id: string;
   description: string;
   done: boolean
 }
 
 export function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<Itodo[]>([]);
   const [newTodo, setNewTodo] = useState("");
 
   function handleTodoSubmit(event: FormEvent):void {
@@ -30,11 +30,14 @@ export function App() {
 
     setTodos([...todos ,createdTodo]);
 
+    setNewTodo("");
+
   }
 
-  function handleNewTodoChange(event: ChangeEvent<HTMLTextAreaElement>):void {
+  function handleNewTodoChange(event: ChangeEvent<HTMLInputElement>):void {
     event.target.setCustomValidity("");
     setNewTodo(event.target.value);
+
   }
 
   function handleDeleteTodo( todoDelete: Itodo ):void {
@@ -55,7 +58,7 @@ export function App() {
     setTodos(alterDoneTodo);
   }
 
-  function counterTodoChecked(todoCounter: Itodo){
+  function counterTodoChecked(): number{
     const SumCheckedTodo = todos.reduce( (counter,todo) => {
       if(todo.done === true){
         counter++;
@@ -66,7 +69,7 @@ export function App() {
     return SumCheckedTodo;
   };
 
-  function handlenewTodoInvalid(event: InvalidEvent<HTMLTextAreaElement>){
+  function handlenewTodoInvalid(event: InvalidEvent<HTMLInputElement>){
     event.target.setCustomValidity("Esse campo é obrigatório");
   }
 
@@ -84,6 +87,7 @@ export function App() {
             className={styles.input}
             required
             onInvalid={handlenewTodoInvalid}
+            value={newTodo}
             />
           <button 
             type="submit" 
