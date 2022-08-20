@@ -20,7 +20,7 @@
   margin-top: -1.8rem;
 }
 
-.main button{
+.main .add{
   height: 52px;
   width: 90px;
   background-color: var(--blue-dark);
@@ -38,7 +38,7 @@
   align-items: center;
 }
 
-.main button:hover {
+.main .add:hover {
   background-color: var(--blue);
 }
 
@@ -78,6 +78,20 @@
   margin-left: 8px;
   align-items: center;
   justify-content: center;
+  font-size: 12px;
+}
+
+.setupCount .done {
+  display: flex;
+  width: 52px;
+  height: 19px;
+  border-radius: 999px;
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+  margin-left: 8px;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
 }
 
 .center {
@@ -101,4 +115,9 @@
   font-size: 16px;
   color: var(--gray-300);
   font-weight: 400;
+}
+
+.todo {
+  width: 736px;
+  height: 100%;
 }

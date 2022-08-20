@@ -3,25 +3,74 @@ import "./global.css";
 import styles from "./App.module.css";
 import clipboard from "./assets/img/Clipboard.svg";
 
-import {PlusCircle, ClipboardText} from "phosphor-react";
-import { FormEvent, ChangeEvent, useState } from "react";
+import {PlusCircle} from "phosphor-react";
+import { FormEvent, ChangeEvent, useState, InvalidEvent } from "react";
 import { Todo } from "./components/Todo";
 
+import { v4 as uuidV4 } from "uuid";
+
+interface Itodo {
+  id: string;
+  description: string;
+  done: boolean
+}
+
 export function App() {
-  const [todos, setTodos] = useState(["Fazer café"]);
+  const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
 
-  function handleTodoSubmit(event: FormEvent) {
+  function handleTodoSubmit(event: FormEvent):void {
     event.preventDefault();
 
-    setTodos([...todos, newTodo]);
-    
+    const createdTodo: Itodo = {
+      id: uuidV4(),
+      description: newTodo,
+      done: false,
+    }
+
+    setTodos([...todos ,createdTodo]);
+
   }
 
   function handleNewTodoChange(event: ChangeEvent<HTMLTextAreaElement>):void {
     event.target.setCustomValidity("");
-    setNewTodo(event.target.value)
+    setNewTodo(event.target.value);
   }
+
+  function handleDeleteTodo( todoDelete: Itodo ):void {
+    const deleteTodo = todos.filter( todo => {
+      return todo !== todoDelete
+    });
+    
+    setTodos(deleteTodo);
+  }
+
+  function alterTodo(alter: Itodo):void {
+    const alterDoneTodo = todos.map((todo) => {
+      if(alter.id === todo.id) {
+        todo.done = !todo.done;
+      }
+      return todo;
+    });
+    setTodos(alterDoneTodo);
+  }
+
+  function counterTodoChecked(todoCounter: Itodo){
+    const SumCheckedTodo = todos.reduce( (counter,todo) => {
+      if(todo.done === true){
+        counter++;
+      }
+      return counter;
+    }, 0)
+
+    return SumCheckedTodo;
+  };
+
+  function handlenewTodoInvalid(event: InvalidEvent<HTMLTextAreaElement>){
+    event.target.setCustomValidity("Esse campo é obrigatório");
+  }
+
+  const disableButtonEmptyTodo = newTodo.length === 0;
 
   return (
     <>
@@ -33,8 +82,15 @@ export function App() {
             type="text" 
             placeholder="Adicione uma nova tarefa" 
             className={styles.input}
+            required
+            onInvalid={handlenewTodoInvalid}
             />
-          <button type="submit">
+          <button 
+            type="submit" 
+            className={styles.add}
+            disabled={disableButtonEmptyTodo}
+            >
+              
             Criar
             <PlusCircle size={20}/>
           </button>
@@ -44,12 +100,18 @@ export function App() {
           <div className={styles.setupCount}>
             <div>
               <p>Tarefas criadas</p>
-              <div className={styles.number}>{0}</div>
+              <div className={styles.number}>{todos.length}</div>
             </div>
 
             <div>
               <p>Concluídas</p>
-              <div className={styles.number}>{0}</div>
+              <div className={styles.done}>{todos.length === 0 ? 0 : 
+              (
+                <>
+                  {counterTodoChecked()} de {todos.length}
+                </>
+              )
+              }</div>
             </div>
           </div>
           
@@ -67,9 +129,9 @@ export function App() {
 
               </>
             ) : (
-              <div>
+              <div className={styles.todo}>
                 {todos.map( todo => {
-                  return <Todo propsTodo={todo} check={false}/>
+                  return <Todo key={todo.id} propsTodo={todo} deleteTodo={handleDeleteTodo} alterDone={alterTodo} />
                 })}
               </div>
             )}
