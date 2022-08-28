@@ -9,5 +9,5 @@
   <h3>IGNITE FEED</h3>
   <hr>
   
-  <img src="https://github.com/JhonatanBS/REACT/blob/main/Curso_ROCKETSEAT/Projeto01/01_fundamentos_reactjs/2022-08-19%2022-43-45.gif" />
+  <img src="./Assets/ignite-lab-show.gif" width="100%" />
 </div>
