@@ -33,10 +33,10 @@
   
   <div>
     <a href="https://github.com/JhonatanBS/Ignite-Lab" target="_blank">
-    <img aling="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank">
+    <img aling="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
     </a>  
     <a href="https://ignite-lab-eta-ochre.vercel.app/" target="_blank">
-    <img aling="center" src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" target="_blank">
+    <img aling="center" src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
     </a>  
   <div>
     
