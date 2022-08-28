@@ -3,10 +3,18 @@
 <div align="center">
   
   <img src="./Assets/REACT.gif" width="100%"/>
-  <p>Segundo o proprio site, REACT é uma biblioteca javascript para criar interfaces de usuários.</p>
-  <br>
+  
   <hr>
-  <h3>IGNITE FEED</h3>
+  
+  <p><strong>Segundo o proprio site, REACT é uma biblioteca javascript para criar interfaces de usuários.</strong></p>
+  
+  <p>Components(Componentes)</p>
+  <p>JSX(JS + XML)</p>
+  <p>State(estados)</p>
+  <p>Props(propriedades)</p>
+  
+  <hr>
+  <img src="./Assets/ignite-labe-title.svg" />
   <hr>
   
   <img src="./Assets/ignite-lab-show.gif" width="100%" />
