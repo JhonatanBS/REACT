@@ -6,6 +6,6 @@
 
 <hr>
 
-![Ignite-feed](https://github.com/JhonatanBS/REACT/blob/main/Curso_ROCKETSEAT/introducao/01_fundamentos_reactjs-ts/ignite-feed.png)
+<img src="https://github.com/JhonatanBS/REACT/blob/main/Curso_ROCKETSEAT/Projeto01/01_fundamentos_reactjs-ts/ignite-feed.png" width="100%"/>
   
 </div>  
