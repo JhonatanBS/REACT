@@ -2,7 +2,7 @@
   <hr>
   
 <div align="center">  
-  <p><strong>Segundo o proprio site, REACT é uma biblioteca javascript para criar interfaces de usuários.</strong></p>
+  <p><strong>The library for web and native user interfaces.</strong></p>
   
   <p>Components(Componentes)</p>
   <p>JSX(JS + XML)</p>
